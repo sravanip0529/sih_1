@@ -43,6 +43,34 @@ This repository currently contains the project structure and runnable service sk
 
 Model checkpoints, licenses, and dimensions must be verified before implementation in a later phase.
 
+## Phase status overview
+
+The project has progressed through the full workflow in a scientific, phase-based sequence. The current implementation status is summarized below.
+
+| Phase | Focus | Status | Notes |
+|---|---|---|---|
+| Phase 0 | Environment and constraints | Complete | Host and container baseline verified; tooling and limits documented. |
+| Phase 1 | Repository and service foundation | Complete | Core project structure and backend/frontend scaffolding ready. |
+| Phase 2 | Backend dependency and service foundation | Complete | Python, API, Qdrant/Postgres runtime setup validated. |
+| Phase 3 | Sentinel-2/STAC sample acquisition | Complete | Real sample scenes acquired and provenance recorded. |
+| Phase 4 | Raster preparation and common grid | Complete | Real Sentinel-2 bands reprojected and prepared on a common 10 m grid. |
+| Phase 5 | Quality and cloud masking | Complete | Cloud/no-data quality masks generated and used in analysis. |
+| Phase 6 | Geometric alignment and temporal registration | Complete | Alignment workflow and validation implemented for the project dataset. |
+| Phase 7 | Radiometric normalization | Complete | Normalized output prepared for consistent cross-date comparison. |
+| Phase 8 | Change detection | Complete | Change magnitude and masks computed from multi-date spectral differences. |
+| Phase 9 | Region extraction and metadata generation | Complete | Connected change evidence converted into region-level artifacts. |
+| Phase 10 | Region embeddings and vector indexing | Complete | Region metadata embedded and stored in Qdrant. |
+| Phase 11 | Semantic retrieval over real indexed regions | Complete | Natural-language query execution over the real region index validated. |
+| Phase 12 | Retrieval-grounded evidence interpretation | Complete | Retrieved results resolved back to region metadata with cautious interpretation. |
+| Phase 13 | Retrieval API and backend integration | Complete | FastAPI endpoints expose the validated retrieval workflow. |
+| Phase 14 | Frontend retrieval interface and visualization | Complete | Retrieval UI is connected to the backend and presents evidence-backed results. |
+
+### Current project boundary
+
+The project is currently validated through the end-to-end retrieval stack: Sentinel imagery -> processing -> change detection -> region extraction -> embeddings -> Qdrant retrieval -> evidence interpretation -> API -> frontend interface.
+
+The system intentionally preserves scientific caution: retrieval similarity is treated as similarity evidence, not a probability or ground-truth classification.
+
 ## Repository layout
 
 ```text
