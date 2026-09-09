@@ -1,0 +1,382 @@
+{
+  "status": "complete",
+  "query": "Find regions with strong vegetation-related spectral change",
+  "query_timestamp": "2026-09-09T20:43:23.844970+00:00",
+  "reference_date": "2023-06-05",
+  "moving_date": "2024-06-26",
+  "top_k": 5,
+  "collection_name": "phase10_region_embeddings",
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "results": [
+    {
+      "region_id": "region_0112",
+      "retrieval_rank": 1,
+      "retrieval_score": 0.47385776,
+      "retrieval_score_label": "semantic retrieval similarity score",
+      "query_timestamp": "2026-09-09T20:43:23.847996+00:00",
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 3,
+      "area_m2": 300.0,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              124,
+              34
+            ],
+            [
+              125,
+              34
+            ],
+            [
+              125,
+              35
+            ],
+            [
+              124,
+              35
+            ],
+            [
+              124,
+              34
+            ]
+          ]
+        ]
+      },
+      "mean_change_magnitude": 6.1023125648498535,
+      "median_change_magnitude": 6.029162406921387,
+      "max_change_magnitude": 6.326769828796387,
+      "spectral_summary": "BLUE: positive difference (360.18); GREEN: positive difference (494.72); RED: positive difference (494.70); NIR: positive difference (485.15); SWIR16: negative difference (-34.56)",
+      "evidence_summary": "Region region_0112 spans 3 changed pixels with area 300.0 square meters between 2023-06-05 and 2024-06-26. The observed change magnitude is mean 6.10, median 6.03, maximum 6.33.",
+      "scientific_interpretation": "The retrieved region is associated with a semantic retrieval similarity score of 0.473858. This region shows a spectral pattern with BLUE, GREEN, RED positive difference and SWIR16 negative difference.  This is a cautious spectral interpretation of the detected difference, not a verified real-world land-cover event or an external validation result.",
+      "limitations": [
+        "Semantic retrieval is not ground-truth classification.",
+        "Spectral change is not automatically a verified real-world event.",
+        "Similarity scores are not probabilities.",
+        "No external validation dataset was introduced in this phase."
+      ],
+      "provenance": {
+        "phase_3_source_scenes": [
+          "data/raw/sentinel"
+        ],
+        "phase_4_prepared_grid": "data/processed/sentinel",
+        "phase_5_1_quality_masks": "data/masks",
+        "phase_6_alignment": "data/aligned",
+        "phase_7_normalization": "data/normalized",
+        "phase_8_change_evidence": "data/change",
+        "phase_9_region_path": "data/processed/regions/regions.json",
+        "phase_9_geojson_path": "data/processed/regions/regions.geojson",
+        "phase_10_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "phase_10_qdrant_collection": "phase10_region_embeddings",
+        "phase_11_query": "Find regions with strong vegetation-related spectral change",
+        "phase_11_result_rank": 1,
+        "phase_11_result_score": 0.47385776,
+        "phase_11_retrieval_report": "data/retrieval/retrieval_report.json",
+        "region_id": "region_0112",
+        "timestamp": "2026-09-09T20:43:23.848012+00:00",
+        "artifact_paths": {
+          "region_json": "data/processed/regions/regions.json",
+          "region_geojson": "data/processed/regions/regions.geojson"
+        }
+      }
+    },
+    {
+      "region_id": "region_0001",
+      "retrieval_rank": 2,
+      "retrieval_score": 0.47292763,
+      "retrieval_score_label": "semantic retrieval similarity score",
+      "query_timestamp": "2026-09-09T20:43:23.850986+00:00",
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 102,
+      "area_m2": 10200.0,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              99,
+              30
+            ],
+            [
+              116,
+              30
+            ],
+            [
+              116,
+              55
+            ],
+            [
+              99,
+              55
+            ],
+            [
+              99,
+              30
+            ]
+          ]
+        ]
+      },
+      "mean_change_magnitude": 7.404417037963867,
+      "median_change_magnitude": 6.972419738769531,
+      "max_change_magnitude": 12.985716819763184,
+      "spectral_summary": "BLUE: negative difference (-321.04); GREEN: negative difference (-424.08); RED: negative difference (-503.95); NIR: negative difference (-604.30); SWIR16: negative difference (-457.72)",
+      "evidence_summary": "Region region_0001 spans 102 changed pixels with area 10200.0 square meters between 2023-06-05 and 2024-06-26. The observed change magnitude is mean 7.40, median 6.97, maximum 12.99.",
+      "scientific_interpretation": "The retrieved region is associated with a semantic retrieval similarity score of 0.472928. This region shows a spectral pattern with BLUE GREEN RED differences. This is a cautious spectral interpretation of the detected difference, not a verified real-world land-cover event or an external validation result.",
+      "limitations": [
+        "Semantic retrieval is not ground-truth classification.",
+        "Spectral change is not automatically a verified real-world event.",
+        "Similarity scores are not probabilities.",
+        "No external validation dataset was introduced in this phase."
+      ],
+      "provenance": {
+        "phase_3_source_scenes": [
+          "data/raw/sentinel"
+        ],
+        "phase_4_prepared_grid": "data/processed/sentinel",
+        "phase_5_1_quality_masks": "data/masks",
+        "phase_6_alignment": "data/aligned",
+        "phase_7_normalization": "data/normalized",
+        "phase_8_change_evidence": "data/change",
+        "phase_9_region_path": "data/processed/regions/regions.json",
+        "phase_9_geojson_path": "data/processed/regions/regions.geojson",
+        "phase_10_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "phase_10_qdrant_collection": "phase10_region_embeddings",
+        "phase_11_query": "Find regions with strong vegetation-related spectral change",
+        "phase_11_result_rank": 2,
+        "phase_11_result_score": 0.47292763,
+        "phase_11_retrieval_report": "data/retrieval/retrieval_report.json",
+        "region_id": "region_0001",
+        "timestamp": "2026-09-09T20:43:23.850999+00:00",
+        "artifact_paths": {
+          "region_json": "data/processed/regions/regions.json",
+          "region_geojson": "data/processed/regions/regions.geojson"
+        }
+      }
+    },
+    {
+      "region_id": "region_0120",
+      "retrieval_rank": 3,
+      "retrieval_score": 0.4723163,
+      "retrieval_score_label": "semantic retrieval similarity score",
+      "query_timestamp": "2026-09-09T20:43:23.854007+00:00",
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 3,
+      "area_m2": 300.0,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              35,
+              90
+            ],
+            [
+              35,
+              90
+            ],
+            [
+              35,
+              92
+            ],
+            [
+              35,
+              92
+            ],
+            [
+              35,
+              90
+            ]
+          ]
+        ]
+      },
+      "mean_change_magnitude": 6.206478595733643,
+      "median_change_magnitude": 6.008562088012695,
+      "max_change_magnitude": 7.031578540802002,
+      "spectral_summary": "BLUE: positive difference (475.69); GREEN: positive difference (386.28); RED: positive difference (481.20); NIR: positive difference (456.65); SWIR16: positive difference (52.37)",
+      "evidence_summary": "Region region_0120 spans 3 changed pixels with area 300.0 square meters between 2023-06-05 and 2024-06-26. The observed change magnitude is mean 6.21, median 6.01, maximum 7.03.",
+      "scientific_interpretation": "The retrieved region is associated with a semantic retrieval similarity score of 0.472316. This region shows a spectral pattern with BLUE GREEN RED differences. This is a cautious spectral interpretation of the detected difference, not a verified real-world land-cover event or an external validation result.",
+      "limitations": [
+        "Semantic retrieval is not ground-truth classification.",
+        "Spectral change is not automatically a verified real-world event.",
+        "Similarity scores are not probabilities.",
+        "No external validation dataset was introduced in this phase."
+      ],
+      "provenance": {
+        "phase_3_source_scenes": [
+          "data/raw/sentinel"
+        ],
+        "phase_4_prepared_grid": "data/processed/sentinel",
+        "phase_5_1_quality_masks": "data/masks",
+        "phase_6_alignment": "data/aligned",
+        "phase_7_normalization": "data/normalized",
+        "phase_8_change_evidence": "data/change",
+        "phase_9_region_path": "data/processed/regions/regions.json",
+        "phase_9_geojson_path": "data/processed/regions/regions.geojson",
+        "phase_10_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "phase_10_qdrant_collection": "phase10_region_embeddings",
+        "phase_11_query": "Find regions with strong vegetation-related spectral change",
+        "phase_11_result_rank": 3,
+        "phase_11_result_score": 0.4723163,
+        "phase_11_retrieval_report": "data/retrieval/retrieval_report.json",
+        "region_id": "region_0120",
+        "timestamp": "2026-09-09T20:43:23.854018+00:00",
+        "artifact_paths": {
+          "region_json": "data/processed/regions/regions.json",
+          "region_geojson": "data/processed/regions/regions.geojson"
+        }
+      }
+    },
+    {
+      "region_id": "region_0101",
+      "retrieval_rank": 4,
+      "retrieval_score": 0.47230026,
+      "retrieval_score_label": "semantic retrieval similarity score",
+      "query_timestamp": "2026-09-09T20:43:23.857007+00:00",
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 4,
+      "area_m2": 400.0,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              77,
+              166
+            ],
+            [
+              78,
+              166
+            ],
+            [
+              78,
+              167
+            ],
+            [
+              77,
+              167
+            ],
+            [
+              77,
+              166
+            ]
+          ]
+        ]
+      },
+      "mean_change_magnitude": 7.838727951049805,
+      "median_change_magnitude": 7.252498626708984,
+      "max_change_magnitude": 11.03200912475586,
+      "spectral_summary": "BLUE: positive difference (537.91); GREEN: positive difference (491.43); RED: positive difference (525.15); NIR: positive difference (786.10); SWIR16: positive difference (227.05)",
+      "evidence_summary": "Region region_0101 spans 4 changed pixels with area 400.0 square meters between 2023-06-05 and 2024-06-26. The observed change magnitude is mean 7.84, median 7.25, maximum 11.03.",
+      "scientific_interpretation": "The retrieved region is associated with a semantic retrieval similarity score of 0.472300. This region shows a spectral pattern with BLUE GREEN RED differences. This is a cautious spectral interpretation of the detected difference, not a verified real-world land-cover event or an external validation result.",
+      "limitations": [
+        "Semantic retrieval is not ground-truth classification.",
+        "Spectral change is not automatically a verified real-world event.",
+        "Similarity scores are not probabilities.",
+        "No external validation dataset was introduced in this phase."
+      ],
+      "provenance": {
+        "phase_3_source_scenes": [
+          "data/raw/sentinel"
+        ],
+        "phase_4_prepared_grid": "data/processed/sentinel",
+        "phase_5_1_quality_masks": "data/masks",
+        "phase_6_alignment": "data/aligned",
+        "phase_7_normalization": "data/normalized",
+        "phase_8_change_evidence": "data/change",
+        "phase_9_region_path": "data/processed/regions/regions.json",
+        "phase_9_geojson_path": "data/processed/regions/regions.geojson",
+        "phase_10_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "phase_10_qdrant_collection": "phase10_region_embeddings",
+        "phase_11_query": "Find regions with strong vegetation-related spectral change",
+        "phase_11_result_rank": 4,
+        "phase_11_result_score": 0.47230026,
+        "phase_11_retrieval_report": "data/retrieval/retrieval_report.json",
+        "region_id": "region_0101",
+        "timestamp": "2026-09-09T20:43:23.857017+00:00",
+        "artifact_paths": {
+          "region_json": "data/processed/regions/regions.json",
+          "region_geojson": "data/processed/regions/regions.geojson"
+        }
+      }
+    },
+    {
+      "region_id": "region_0008",
+      "retrieval_rank": 5,
+      "retrieval_score": 0.4720258,
+      "retrieval_score_label": "semantic retrieval similarity score",
+      "query_timestamp": "2026-09-09T20:43:23.859995+00:00",
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 57,
+      "area_m2": 5700.0,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              122,
+              57
+            ],
+            [
+              130,
+              57
+            ],
+            [
+              130,
+              66
+            ],
+            [
+              122,
+              66
+            ],
+            [
+              122,
+              57
+            ]
+          ]
+        ]
+      },
+      "mean_change_magnitude": 16.710603713989258,
+      "median_change_magnitude": 16.583898544311523,
+      "max_change_magnitude": 31.850189208984375,
+      "spectral_summary": "BLUE: positive difference (987.88); GREEN: positive difference (1134.81); RED: positive difference (1321.90); NIR: positive difference (1174.87); SWIR16: positive difference (869.59)",
+      "evidence_summary": "Region region_0008 spans 57 changed pixels with area 5700.0 square meters between 2023-06-05 and 2024-06-26. The observed change magnitude is mean 16.71, median 16.58, maximum 31.85.",
+      "scientific_interpretation": "The retrieved region is associated with a semantic retrieval similarity score of 0.472026. This region shows a spectral pattern with BLUE GREEN RED differences. This is a cautious spectral interpretation of the detected difference, not a verified real-world land-cover event or an external validation result.",
+      "limitations": [
+        "Semantic retrieval is not ground-truth classification.",
+        "Spectral change is not automatically a verified real-world event.",
+        "Similarity scores are not probabilities.",
+        "No external validation dataset was introduced in this phase."
+      ],
+      "provenance": {
+        "phase_3_source_scenes": [
+          "data/raw/sentinel"
+        ],
+        "phase_4_prepared_grid": "data/processed/sentinel",
+        "phase_5_1_quality_masks": "data/masks",
+        "phase_6_alignment": "data/aligned",
+        "phase_7_normalization": "data/normalized",
+        "phase_8_change_evidence": "data/change",
+        "phase_9_region_path": "data/processed/regions/regions.json",
+        "phase_9_geojson_path": "data/processed/regions/regions.geojson",
+        "phase_10_embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+        "phase_10_qdrant_collection": "phase10_region_embeddings",
+        "phase_11_query": "Find regions with strong vegetation-related spectral change",
+        "phase_11_result_rank": 5,
+        "phase_11_result_score": 0.4720258,
+        "phase_11_retrieval_report": "data/retrieval/retrieval_report.json",
+        "region_id": "region_0008",
+        "timestamp": "2026-09-09T20:43:23.860005+00:00",
+        "artifact_paths": {
+          "region_json": "data/processed/regions/regions.json",
+          "region_geojson": "data/processed/regions/regions.geojson"
+        }
+      }
+    }
+  ]
+}

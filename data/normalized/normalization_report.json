@@ -1,0 +1,239 @@
+{
+  "phase": "phase_7",
+  "status": "accepted",
+  "reference_date": "2023-06-05",
+  "moving_date": "2024-06-26",
+  "method": "median_scaling",
+  "bands": [
+    "blue",
+    "green",
+    "red",
+    "nir",
+    "swir16"
+  ],
+  "valid_mask_values": {
+    "valid": 0,
+    "cloud": 1,
+    "nodata": 2
+  },
+  "quality_mask_paths": {
+    "reference": "data/processed/quality/2023-06-05/quality_mask.tif",
+    "moving": "data/processed/quality/2024-06-26/quality_mask.tif"
+  },
+  "input_paths": {
+    "reference": "data/aligned/2023-06-05",
+    "moving": "data/aligned/2024-06-26"
+  },
+  "before_after": {
+    "blue": {
+      "reference_median": 798.0,
+      "moving_median_before": 867.9771728515625,
+      "moving_median_after": 799.371826171875,
+      "scale": 0.9193790170521804,
+      "mean_difference_before": 46.71075439453125,
+      "mean_difference_after": -26.46075439453125
+    },
+    "green": {
+      "reference_median": 930.0,
+      "moving_median_before": 1022.234375,
+      "moving_median_after": 931.7426147460938,
+      "scale": 0.909771792794583,
+      "mean_difference_before": 73.79302978515625,
+      "mean_difference_after": -22.56549072265625
+    },
+    "red": {
+      "reference_median": 992.0,
+      "moving_median_before": 1094.1351318359375,
+      "moving_median_after": 993.2182006835938,
+      "scale": 0.906652177720903,
+      "mean_difference_before": 79.272705078125,
+      "mean_difference_after": -26.7069091796875
+    },
+    "nir": {
+      "reference_median": 1670.0,
+      "moving_median_before": 1738.4378662109375,
+      "moving_median_after": 1670.544677734375,
+      "scale": 0.9606325497499066,
+      "mean_difference_before": 23.976806640625,
+      "mean_difference_after": -48.3170166015625
+    },
+    "swir16": {
+      "reference_median": 1684.21875,
+      "moving_median_before": 1851.5078125,
+      "moving_median_after": 1684.875244140625,
+      "scale": 0.9096471203790829,
+      "mean_difference_before": 117.8350830078125,
+      "mean_difference_after": -53.5084228515625
+    }
+  },
+  "band_statistics": {
+    "blue": {
+      "reference": {
+        "minimum": 0.0,
+        "maximum": 19464.0,
+        "mean": 874.9148342354533,
+        "stddev": 629.0131443736534,
+        "valid_pixel_count": 23648,
+        "nodata_pixel_count": 0
+      },
+      "moving_before": {
+        "minimum": 0.0,
+        "maximum": 8551.890625,
+        "mean": 921.6256447084739,
+        "stddev": 406.8490461411127,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      },
+      "moving_after": {
+        "minimum": 0.0,
+        "maximum": 7868.11669921875,
+        "mean": 848.454146737229,
+        "stddev": 374.29715037434295,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      }
+    },
+    "green": {
+      "reference": {
+        "minimum": 0.0,
+        "maximum": 18168.0,
+        "mean": 1010.6989174560216,
+        "stddev": 576.2686823240662,
+        "valid_pixel_count": 23648,
+        "nodata_pixel_count": 0
+      },
+      "moving_before": {
+        "minimum": 0.0,
+        "maximum": 9245.517578125,
+        "mean": 1084.4918991169259,
+        "stddev": 424.19611513360087,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      },
+      "moving_after": {
+        "minimum": 0.0,
+        "maximum": 8418.0498046875,
+        "mean": 988.1333584827602,
+        "stddev": 386.1719807046315,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      }
+    },
+    "red": {
+      "reference": {
+        "minimum": 0.0,
+        "maximum": 17224.0,
+        "mean": 1066.5959912043302,
+        "stddev": 589.1899249648967,
+        "valid_pixel_count": 23648,
+        "nodata_pixel_count": 0
+      },
+      "moving_before": {
+        "minimum": 0.0,
+        "maximum": 10220.548828125,
+        "mean": 1145.8685972017954,
+        "stddev": 488.1259866577764,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      },
+      "moving_after": {
+        "minimum": 0.0,
+        "maximum": 9268.7587890625,
+        "mean": 1039.8889926421568,
+        "stddev": 442.5660091906122,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      }
+    },
+    "nir": {
+      "reference": {
+        "minimum": 0.0,
+        "maximum": 16361.0,
+        "mean": 1835.35850811908,
+        "stddev": 953.1301593078528,
+        "valid_pixel_count": 23648,
+        "nodata_pixel_count": 0
+      },
+      "moving_before": {
+        "minimum": 0.0,
+        "maximum": 11040.5205078125,
+        "mean": 1859.335428344239,
+        "stddev": 720.0313440039764,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      },
+      "moving_after": {
+        "minimum": 0.0,
+        "maximum": 10607.3955078125,
+        "mean": 1787.041663263867,
+        "stddev": 692.0856369295313,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      }
+    },
+    "swir16": {
+      "reference": {
+        "minimum": 438.75,
+        "maximum": 14395.5,
+        "mean": 1780.48560396228,
+        "stddev": 590.6596249814876,
+        "valid_pixel_count": 23648,
+        "nodata_pixel_count": 0
+      },
+      "moving_before": {
+        "minimum": 464.88592529296875,
+        "maximum": 6877.39990234375,
+        "mean": 1898.3207469022168,
+        "stddev": 416.07779258690493,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      },
+      "moving_after": {
+        "minimum": 422.5779113769531,
+        "maximum": 6251.50634765625,
+        "mean": 1726.9771958512565,
+        "stddev": 378.46243272796005,
+        "valid_pixel_count": 23536,
+        "nodata_pixel_count": 0
+      }
+    }
+  },
+  "geometry": {
+    "reference": {
+      "crs": "EPSG:32633",
+      "width": 140,
+      "height": 171,
+      "transform": [
+        10.0,
+        0.0,
+        390380.0,
+        0.0,
+        -10.0,
+        5820110.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "moving": {
+      "crs": "EPSG:32633",
+      "width": 140,
+      "height": 171,
+      "transform": [
+        10.0,
+        0.0,
+        390380.0,
+        0.0,
+        -10.0,
+        5820110.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "geometry_preserved": true
+  },
+  "decision": "normalization_applied_with_valid_masking_and_median_scaling",
+  "limitations": "This method reduces cross-date median offset using valid pixels only; it does not remove all seasonal, atmospheric, illumination, sensor, or land-cover differences.",
+  "timestamp": "2026-09-09T19:56:18.927081+00:00"
+}

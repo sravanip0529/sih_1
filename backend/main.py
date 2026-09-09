@@ -1,7 +1,9 @@
 import logging
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
+from backend.api.retrieval import router as retrieval_router
 from backend.database.postgres_client import check_connection as check_postgres_connection
 from backend.database.qdrant_client import check_connection as check_qdrant_connection
 from backend.settings import settings
@@ -18,6 +20,16 @@ app = FastAPI(
     title="Satellite Semantic Retrieval and Multi-Temporal Change Analysis System",
     version="0.1.0",
 )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://0.0.0.0:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(retrieval_router)
 
 
 def check_postgres() -> tuple[str, str | None]:

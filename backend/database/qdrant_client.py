@@ -50,5 +50,11 @@ def search_points(
     collection_name: str,
     query_vector: list[float],
     limit: int = 20,
-) -> list[models.ScoredPoint]:
-    return client.search(collection_name=collection_name, query_vector=query_vector, limit=limit)
+) -> object:
+    return client.query_points(
+        collection_name=collection_name,
+        query=models.NearestQuery(nearest=query_vector),
+        limit=limit,
+        with_payload=True,
+        with_vectors=False,
+    )

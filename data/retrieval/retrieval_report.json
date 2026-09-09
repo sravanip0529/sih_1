@@ -1,0 +1,257 @@
+{
+  "status": "complete",
+  "query": "Find regions with strong vegetation-related spectral change",
+  "top_k": 5,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "collection_name": "phase10_region_embeddings",
+  "reference_date": "2023-06-05",
+  "moving_date": "2024-06-26",
+  "timestamp": "2026-09-09T20:58:21.261606+00:00",
+  "results": [
+    {
+      "rank": 1,
+      "region_id": "region_0112",
+      "vector_point_id": 112,
+      "similarity_score": 0.47385776,
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 3,
+      "area_m2": 300.0,
+      "semantic_description": "Region region_0112 covers approximately 300 square meters and contains 3 changed pixels between 2023-06-05 and 2024-06-26. The region shows 6.10 mean change magnitude. Major spectral direction patterns: NIR positive, SWIR16 negative, RED positive, GREEN positive, BLUE positive. This description represents spectral change evidence and does not identify a verified real-world land-cover event.",
+      "change_attributes": {
+        "blue": {
+          "mean_difference": 360.1802978515625,
+          "median_difference": 344.0341796875,
+          "max_difference": 398.22265625,
+          "min_difference": 338.2840576171875
+        },
+        "green": {
+          "mean_difference": 494.724609375,
+          "median_difference": 496.73779296875,
+          "max_difference": 516.5274658203125,
+          "min_difference": 470.9085693359375
+        },
+        "red": {
+          "mean_difference": 494.6983947753906,
+          "median_difference": 494.4541015625,
+          "max_difference": 507.0390625,
+          "min_difference": 482.60205078125
+        },
+        "nir": {
+          "mean_difference": 485.15478515625,
+          "median_difference": 479.7939453125,
+          "max_difference": 524.3095703125,
+          "min_difference": 451.36083984375
+        },
+        "swir16": {
+          "mean_difference": -34.562255859375,
+          "median_difference": -27.024658203125,
+          "max_difference": 28.42041015625,
+          "min_difference": -105.08251953125
+        }
+      },
+      "spectral_attributes": {
+        "mean_change_magnitude": 6.1023125648498535,
+        "median_change_magnitude": 6.029162406921387,
+        "max_change_magnitude": 6.326769828796387
+      },
+      "geometry_available": true
+    },
+    {
+      "rank": 2,
+      "region_id": "region_0001",
+      "vector_point_id": 1,
+      "similarity_score": 0.47292763,
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 102,
+      "area_m2": 10200.0,
+      "semantic_description": "Region region_0001 covers approximately 10200 square meters and contains 102 changed pixels between 2023-06-05 and 2024-06-26. The region shows 7.40 mean change magnitude. Major spectral direction patterns: NIR negative, SWIR16 negative, RED negative, GREEN negative, BLUE negative. This description represents spectral change evidence and does not identify a verified real-world land-cover event.",
+      "change_attributes": {
+        "blue": {
+          "mean_difference": -321.0420837402344,
+          "median_difference": -323.96466064453125,
+          "max_difference": 781.866455078125,
+          "min_difference": -719.2269287109375
+        },
+        "green": {
+          "mean_difference": -424.07635498046875,
+          "median_difference": -428.2957763671875,
+          "max_difference": 824.029052734375,
+          "min_difference": -910.5240478515625
+        },
+        "red": {
+          "mean_difference": -503.9539794921875,
+          "median_difference": -507.22393798828125,
+          "max_difference": 753.919677734375,
+          "min_difference": -1016.72216796875
+        },
+        "nir": {
+          "mean_difference": -604.2996826171875,
+          "median_difference": -596.3794555664062,
+          "max_difference": 687.206298828125,
+          "min_difference": -1128.975830078125
+        },
+        "swir16": {
+          "mean_difference": -457.71820068359375,
+          "median_difference": -511.1768798828125,
+          "max_difference": 148.5673828125,
+          "min_difference": -837.91015625
+        }
+      },
+      "spectral_attributes": {
+        "mean_change_magnitude": 7.404417037963867,
+        "median_change_magnitude": 6.972419738769531,
+        "max_change_magnitude": 12.985716819763184
+      },
+      "geometry_available": true
+    },
+    {
+      "rank": 3,
+      "region_id": "region_0120",
+      "vector_point_id": 120,
+      "similarity_score": 0.4723163,
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 3,
+      "area_m2": 300.0,
+      "semantic_description": "Region region_0120 covers approximately 300 square meters and contains 3 changed pixels between 2023-06-05 and 2024-06-26. The region shows 6.21 mean change magnitude. Major spectral direction patterns: NIR positive, SWIR16 positive, RED positive, GREEN positive, BLUE positive. This description represents spectral change evidence and does not identify a verified real-world land-cover event.",
+      "change_attributes": {
+        "blue": {
+          "mean_difference": 475.6894836425781,
+          "median_difference": 490.08544921875,
+          "max_difference": 492.79931640625,
+          "min_difference": 444.1837158203125
+        },
+        "green": {
+          "mean_difference": 386.27685546875,
+          "median_difference": 350.617919921875,
+          "max_difference": 469.972412109375,
+          "min_difference": 338.240234375
+        },
+        "red": {
+          "mean_difference": 481.201416015625,
+          "median_difference": 399.2822265625,
+          "max_difference": 676.8258056640625,
+          "min_difference": 367.4962158203125
+        },
+        "nir": {
+          "mean_difference": 456.6512451171875,
+          "median_difference": 481.6966552734375,
+          "max_difference": 566.619384765625,
+          "min_difference": 321.6376953125
+        },
+        "swir16": {
+          "mean_difference": 52.3704833984375,
+          "median_difference": 44.7520751953125,
+          "max_difference": 118.8779296875,
+          "min_difference": -6.5185546875
+        }
+      },
+      "spectral_attributes": {
+        "mean_change_magnitude": 6.206478595733643,
+        "median_change_magnitude": 6.008562088012695,
+        "max_change_magnitude": 7.031578540802002
+      },
+      "geometry_available": true
+    },
+    {
+      "rank": 4,
+      "region_id": "region_0101",
+      "vector_point_id": 101,
+      "similarity_score": 0.47230026,
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 4,
+      "area_m2": 400.0,
+      "semantic_description": "Region region_0101 covers approximately 400 square meters and contains 4 changed pixels between 2023-06-05 and 2024-06-26. The region shows 7.84 mean change magnitude. Major spectral direction patterns: NIR positive, SWIR16 positive, RED positive, GREEN positive, BLUE positive. This description represents spectral change evidence and does not identify a verified real-world land-cover event.",
+      "change_attributes": {
+        "blue": {
+          "mean_difference": 537.9107666015625,
+          "median_difference": 499.3170166015625,
+          "max_difference": 735.16455078125,
+          "min_difference": 417.8446044921875
+        },
+        "green": {
+          "mean_difference": 491.4342346191406,
+          "median_difference": 407.03875732421875,
+          "max_difference": 843.87744140625,
+          "min_difference": 307.781982421875
+        },
+        "red": {
+          "mean_difference": 525.152587890625,
+          "median_difference": 539.5147705078125,
+          "max_difference": 798.5540771484375,
+          "min_difference": 223.026611328125
+        },
+        "nir": {
+          "mean_difference": 786.1045532226562,
+          "median_difference": 824.9080810546875,
+          "max_difference": 916.156982421875,
+          "min_difference": 578.445068359375
+        },
+        "swir16": {
+          "mean_difference": 227.05007934570312,
+          "median_difference": 232.59649658203125,
+          "max_difference": 245.1346435546875,
+          "min_difference": 197.8726806640625
+        }
+      },
+      "spectral_attributes": {
+        "mean_change_magnitude": 7.838727951049805,
+        "median_change_magnitude": 7.252498626708984,
+        "max_change_magnitude": 11.03200912475586
+      },
+      "geometry_available": true
+    },
+    {
+      "rank": 5,
+      "region_id": "region_0008",
+      "vector_point_id": 8,
+      "similarity_score": 0.4720258,
+      "reference_date": "2023-06-05",
+      "moving_date": "2024-06-26",
+      "pixel_count": 57,
+      "area_m2": 5700.0,
+      "semantic_description": "Region region_0008 covers approximately 5700 square meters and contains 57 changed pixels between 2023-06-05 and 2024-06-26. The region shows 16.71 mean change magnitude. Major spectral direction patterns: NIR positive, SWIR16 positive, RED positive, GREEN positive, BLUE positive. This description represents spectral change evidence and does not identify a verified real-world land-cover event.",
+      "change_attributes": {
+        "blue": {
+          "mean_difference": 987.8800048828125,
+          "median_difference": 882.984619140625,
+          "max_difference": 1991.78369140625,
+          "min_difference": 225.7890625
+        },
+        "green": {
+          "mean_difference": 1134.8079833984375,
+          "median_difference": 1098.0496826171875,
+          "max_difference": 2341.667236328125,
+          "min_difference": 239.21929931640625
+        },
+        "red": {
+          "mean_difference": 1321.9019775390625,
+          "median_difference": 1330.33642578125,
+          "max_difference": 2579.14404296875,
+          "min_difference": 366.4139404296875
+        },
+        "nir": {
+          "mean_difference": 1174.8658447265625,
+          "median_difference": 1223.282958984375,
+          "max_difference": 2404.943603515625,
+          "min_difference": -196.2548828125
+        },
+        "swir16": {
+          "mean_difference": 869.5865478515625,
+          "median_difference": 847.32177734375,
+          "max_difference": 1426.821533203125,
+          "min_difference": 330.35791015625
+        }
+      },
+      "spectral_attributes": {
+        "mean_change_magnitude": 16.710603713989258,
+        "median_change_magnitude": 16.583898544311523,
+        "max_change_magnitude": 31.850189208984375
+      },
+      "geometry_available": true
+    }
+  ]
+}

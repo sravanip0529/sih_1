@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "query": "Find regions with strong vegetation-related spectral change",
+  "top_k": 5,
+  "result_count": 5,
+  "output": "data/retrieval_analysis/retrieval_analysis.json",
+  "timestamp": "2026-09-09T20:43:23.844970+00:00"
+}
