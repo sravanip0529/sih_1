@@ -1,0 +1,92 @@
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-satellite}
+      POSTGRES_USER: ${POSTGRES_USER:-satellite}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me-for-local-use}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/001_schema.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  qdrant:
+    image: qdrant/qdrant:v1.13.6
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    healthcheck:
+      test: ["CMD", "bash", "-c", "</dev/tcp/127.0.0.1/6333"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-satellite}
+      POSTGRES_USER: ${POSTGRES_USER:-satellite}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change-me-for-local-use}
+      QDRANT_HOST: qdrant
+      QDRANT_PORT: 6333
+      DATABASE_URL: postgresql://${POSTGRES_USER:-satellite}:${POSTGRES_PASSWORD:-change-me-for-local-use}@postgres:5432/${POSTGRES_DB:-satellite}
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_API_KEY: ${QDRANT_API_KEY:-}
+      APP_ENV: ${APP_ENV:-development}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      API_HOST: ${API_HOST:-0.0.0.0}
+      API_PORT: ${API_PORT:-8000}
+      SERVICE_TIMEOUT_SECONDS: ${SERVICE_TIMEOUT_SECONDS:-2}
+      STAC_API_URL: ${STAC_API_URL:-https://earth-search.aws.element84.com/v1}
+      STAC_COLLECTION: ${STAC_COLLECTION:-sentinel-2-l2a}
+      STAC_PROVIDER: ${STAC_PROVIDER:-Earth Search by Element 84}
+      PROCESSING_RESOLUTION_M: ${PROCESSING_RESOLUTION_M:-10}
+      CLOUD_COVERAGE_THRESHOLD: ${CLOUD_COVERAGE_THRESHOLD:-20}
+      CLOUD_PROBABILITY_THRESHOLD: ${CLOUD_PROBABILITY_THRESHOLD:-0.4}
+      STAC_SEARCH_TIMEOUT_SECONDS: ${STAC_SEARCH_TIMEOUT_SECONDS:-30}
+      DOWNLOAD_TIMEOUT_SECONDS: ${DOWNLOAD_TIMEOUT_SECONDS:-120}
+      MAX_DOWNLOAD_BYTES: ${MAX_DOWNLOAD_BYTES:-500000000}
+      DATA_DIRECTORY: /app/data
+      MODEL_DIRECTORY: /app/data/models
+      SENTINEL_DATA_DIRECTORY: /app/data/raw/sentinel
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - ./backend:/app/backend:ro
+      - ./configs:/app/configs:ro
+      - ./scripts:/app/scripts:ro
+      - ./data:/app/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      qdrant:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    ports:
+      - "${FRONTEND_PORT:-5173}:5173"
+    volumes:
+      - ./frontend:/app
+      - frontend_node_modules:/app/node_modules
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  qdrant_data:
+  frontend_node_modules:

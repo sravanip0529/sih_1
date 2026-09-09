@@ -1,0 +1,1 @@
+"""Bounded-memory raster preparation utilities."""

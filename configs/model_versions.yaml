@@ -1,0 +1,17 @@
+# Checkpoint names, dimensions, and licenses must be verified before use.
+status: configuration_only
+semantic:
+  name: CLIP-RSICD
+  status: pending_verification
+  execution: future_cpu_or_gpu
+spectral:
+  name: Clay Foundation Model
+  status: pending_verification
+  execution: future_gpu_recommended
+change_detection:
+  name: Open-CD SNUNet
+  status: pending_verification
+  execution: future_gpu_recommended
+secondary_change_signal:
+  name: RaVAEn
+  status: pending_verification

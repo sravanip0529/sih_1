@@ -1,0 +1,34 @@
+# Initial engineering defaults only. Validate these against the selected AOI
+# and sensor before using them for scientific conclusions.
+target_resolution_m: 10
+target_crs: "EPSG:32633"
+aoi_buffer_meters: 0
+continuous_resampling_method: bilinear
+output_nodata: 0
+rgb_preview_enabled: true
+rgb_preview_percentile_low: 2.0
+rgb_preview_percentile_high: 98.0
+cloud_coverage_threshold_percent: 20.0
+cloud_probability_threshold: 0.4
+cloud_model: s2cloudless
+cloud_provider: sentinel_scl
+cloud_allow_fallback: false
+cloud_mask_refinement_enabled: false
+cloud_mask_dilation_pixels: 0
+cloud_mask_erosion_pixels: 0
+quality_mask_valid_value: 0
+quality_mask_cloud_value: 1
+quality_mask_nodata_value: 2
+quality_output_nodata: 255
+ndvi:
+  vegetation_threshold: 0.3
+  clearance_delta_threshold: -0.2
+ndwi:
+  water_threshold: 0.0
+  change_delta_threshold: 0.2
+minimum_change_area_m2: 100.0
+tile_size_px: 512
+tile_overlap_px: 0
+alignment_tolerance_px: 1.0
+change_confidence_threshold: 0.4
+high_confidence_threshold: 0.7

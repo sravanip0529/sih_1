@@ -1,0 +1,6 @@
+# Optional Sentinel-2 cloud probability tooling. Install when cloud masking
+# implementation begins; it is intentionally outside the core image.
+s2cloudless>=1.7,<2
+
+# Future ML dependencies remain unpinned until checkpoints, licenses, and
+# CPU/GPU execution requirements are verified.

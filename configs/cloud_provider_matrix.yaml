@@ -1,0 +1,31 @@
+# Phase 5.1 provider evaluation. This is an engineering record, not a legal opinion.
+providers:
+  s2cloudless:
+    version: "1.7.0"
+    algorithm: LightGBM pixel cloud probability model
+    product: Sentinel-2 input with B01/B02/B04/B05/B08/B8A/B09/B10/B11/B12
+    output: probability in [0, 1]
+    shadows: not provided by this integration
+    offline_after_install: true
+    cpu: validated on synthetic input
+    license: package/model terms require review before redistribution
+    actual_project_result: blocked; Earth Search L2A has no usable B10
+    decision: preserved_as_explicit_provider
+  sentinel_scl:
+    version: provider-native L2A SCL asset
+    algorithm: Sentinel-2 Scene Classification Layer
+    product: exact Earth Search sentinel-2-l2a scenes
+    output: categorical classes 0-11
+    shadows: class 3 available and mapped into conservative excluded class 1
+    offline_after_download: true
+    cpu: validated on both real dates
+    license: inherited from source product/provider terms; review before redistribution
+    actual_project_result: passed on both project scenes
+    decision: selected
+  python_fmask:
+    version: not installed
+    algorithm: documented alternative candidate
+    product: requires separate compatibility validation
+    license: GPL-3.0; license review required
+    actual_project_result: not evaluated in runtime
+    decision: not_selected

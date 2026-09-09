@@ -1,0 +1,5 @@
+project_name: satellite-semantic-retrieval
+processing_version: 0.1.0
+semantic_collection: semantic
+spectral_collection: spectral
+tile_size_px: 512

@@ -1,0 +1,20 @@
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #173042;
+  background: #e8eef0;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+.shell { min-height: 100vh; padding: 3rem; background: linear-gradient(135deg, #e8eef0, #f7f1e7); }
+header { max-width: 74rem; margin: 0 auto 2rem; }
+.eyebrow { color: #ba5a34; font: 700 0.8rem/1.2 sans-serif; letter-spacing: 0.14em; }
+h1 { max-width: 42rem; margin: 0; font-size: clamp(2.5rem, 7vw, 5.8rem); line-height: 0.95; }
+.status { font: 1rem/1.5 sans-serif; color: #536772; }
+.workspace { display: grid; grid-template-columns: minmax(16rem, 22rem) 1fr; gap: 1rem; max-width: 74rem; margin: 0 auto; }
+aside, .map-placeholder { min-height: 28rem; border: 1px solid #c5d0d2; border-radius: 8px; background: rgba(255,255,255,0.72); padding: 1.25rem; }
+aside { display: flex; flex-direction: column; gap: 0.75rem; font: 0.95rem sans-serif; }
+input, button { border: 1px solid #a9b8bb; border-radius: 4px; padding: 0.8rem; font: inherit; }
+button { background: #ba5a34; color: white; cursor: pointer; }
+.map-placeholder { display: grid; place-items: center; color: #71858c; font: 700 1.2rem sans-serif; background-image: linear-gradient(rgba(23,48,66,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(23,48,66,.05) 1px, transparent 1px); background-size: 2rem 2rem; }
+@media (max-width: 700px) { .shell { padding: 1.25rem; } .workspace { grid-template-columns: 1fr; } }

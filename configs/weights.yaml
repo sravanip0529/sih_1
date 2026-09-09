@@ -1,0 +1,7 @@
+semantic_weight: 0.5
+change_confidence_weight: 0.5
+change_confidence:
+  evidence: 0.4
+  clear_fraction: 0.2
+  registration_quality: 0.2
+  temporal_consistency: 0.2

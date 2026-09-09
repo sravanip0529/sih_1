@@ -1,0 +1,15 @@
+# Small, reproducible Phase 3 development sample.
+# Cloud filtering is STAC metadata only; it is not pixel-level masking.
+aoi:
+  bbox: [13.385, 52.505, 13.405, 52.520]
+date_a:
+  requested_date: "2023-06-15"
+  window: "2023-06-01T00:00:00Z/2023-06-30T23:59:59Z"
+date_b:
+  requested_date: "2024-06-15"
+  window: "2024-06-01T00:00:00Z/2024-06-30T23:59:59Z"
+max_cloud_cover: 20.0
+search_limit: 20
+# Five bands are the minimum planned set for later RGB, NDVI, and NDWI work.
+required_assets: [blue, green, red, nir, swir16]
+download: true
