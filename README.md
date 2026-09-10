@@ -64,12 +64,54 @@ The project has progressed through the full workflow in a scientific, phase-base
 | Phase 12 | Retrieval-grounded evidence interpretation | Complete | Retrieved results resolved back to region metadata with cautious interpretation. |
 | Phase 13 | Retrieval API and backend integration | Complete | FastAPI endpoints expose the validated retrieval workflow. |
 | Phase 14 | Frontend retrieval interface and visualization | Complete | Retrieval UI is connected to the backend and presents evidence-backed results. |
+| Phase 15 | Offline deployment readiness and end-to-end validation | Partially complete | Phase 9 artifacts regenerated and validated; local model is cached, but a persistent Qdrant service is unavailable in this checkout. |
 
 ### Current project boundary
 
 The project is currently validated through the end-to-end retrieval stack: Sentinel imagery -> processing -> change detection -> region extraction -> embeddings -> Qdrant retrieval -> evidence interpretation -> API -> frontend interface.
 
 The system intentionally preserves scientific caution: retrieval similarity is treated as similarity evidence, not a probability or ground-truth classification.
+
+### Phase 15 offline readiness
+
+The Phase 9 region artifacts can be regenerated from the committed Phase 8 rasters with:
+
+```bash
+python scripts/run_region_representation_workflow.py
+```
+
+This produces `data/processed/regions/regions.json`, `regions.geojson`, `region_features.csv`, and `region_report.json`. The workflow uses the existing two-date change outputs and does not download imagery or change scientific thresholds. Phase 9 output currently contains 132 retained regions with EPSG:32633 geometry.
+
+The Phase 10/11 runtime requires the declared `sentence-transformers` dependency, the locally cached `sentence-transformers/all-MiniLM-L6-v2` model, and a persistent local Qdrant service with collection `phase10_region_embeddings`. The model may be obtained during preparation, but demo runtime must not download it.
+
+#### Offline demo startup contract
+
+Prerequisites:
+
+- Python environment with `backend/requirements.txt` installed
+- Node.js dependencies installed under `frontend/`
+- Docker and Docker Compose, or another local Qdrant server
+- cached `sentence-transformers/all-MiniLM-L6-v2` model
+- generated Phase 9 region artifacts
+
+Start the local services:
+
+```bash
+docker compose up -d postgres qdrant
+docker compose run --rm backend python scripts/run_region_representation_workflow.py
+docker compose run --rm backend python scripts/run_region_embedding_workflow.py
+docker compose up backend frontend
+```
+
+Open `http://localhost:5173` and submit:
+
+```text
+Find regions with strong vegetation-related spectral change
+```
+
+Use `top_k = 5` and keep scientific interpretation enabled. The expected path is browser -> local FastAPI -> local Qdrant -> local embedding model -> Phase 9 metadata/geometry -> Phase 12 interpretation. The frontend uses an artifact-backed SVG and does not require map tiles or remote APIs.
+
+Readiness is **partial** in the current Windows checkout because Docker/Qdrant is not installed, so the persistent collection and live query cannot be validated here. No real results are fabricated when that dependency is unavailable.
 
 ## Repository layout
 

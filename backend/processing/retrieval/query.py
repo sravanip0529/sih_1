@@ -44,7 +44,7 @@ def validate_top_k(top_k: int, *, max_top_k: int = MAX_TOP_K) -> int:
 
 def encode_query(query: str, *, model_name: str = DEFAULT_MODEL_NAME, expected_dim: int | None = None) -> tuple[np.ndarray, str]:
     text = validate_query(query)
-    model = SentenceTransformer(model_name, device="cpu")
+    model = SentenceTransformer(model_name, device="cpu", local_files_only=True)
     vector = model.encode([text], convert_to_numpy=True, normalize_embeddings=False)[0].astype(np.float32)
     if not np.isfinite(vector).all():
         raise QueryValidationError("Generated query embedding contains non-finite values")

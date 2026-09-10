@@ -59,7 +59,7 @@ def generate_embedding_vectors(regions: Sequence[dict[str, Any]], *, model_name:
         raise ValueError("No regions were provided for embedding generation")
 
     texts = [build_region_text(region) for region in regions]
-    model = SentenceTransformer(model_name, device="cpu")
+    model = SentenceTransformer(model_name, device="cpu", local_files_only=True)
     embeddings = model.encode(texts, batch_size=batch_size, convert_to_numpy=True, normalize_embeddings=False)
     embeddings = np.asarray(embeddings, dtype=np.float32)
     if embeddings.ndim != 2:

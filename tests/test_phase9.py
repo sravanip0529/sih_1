@@ -8,6 +8,7 @@ from backend.processing.regions import (
     filter_regions,
     generate_semantic_description,
     summarize_region_statistics,
+    write_region_outputs,
 )
 
 
@@ -59,3 +60,18 @@ def test_semantic_description_is_deterministic() -> None:
     assert "region_0001" in description
     assert "2023-06-05" in description and "2024-06-26" in description
     assert description == generate_semantic_description(region)
+
+
+def test_region_geojson_uses_full_pixel_extent(tmp_path: Path) -> None:
+    write_region_outputs(
+        tmp_path,
+        [{
+            "region_id": "region_0001",
+            "pixel_count": 1,
+            "area_m2": 100.0,
+            "centroid": (2.0, 4.0),
+            "bbox": (2, 4, 2, 4),
+        }],
+    )
+    geometry = __import__("json").loads((tmp_path / "regions.geojson").read_text())["features"][0]["geometry"]
+    assert geometry["coordinates"][0] == [[2, 4], [3, 4], [3, 5], [2, 5], [2, 4]]

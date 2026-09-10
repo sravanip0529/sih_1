@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+from pathlib import Path
 from typing import Any
 
 from fastapi import APIRouter, HTTPException, status
@@ -9,6 +11,7 @@ from backend.processing.interpretation import build_retrieval_analysis
 from backend.processing.retrieval.query import QueryValidationError, execute_query, validate_query, validate_top_k
 
 router = APIRouter(prefix="/api")
+REGION_GEOJSON_PATH = Path("data/processed/regions/regions.geojson")
 
 
 class RetrievalRequest(BaseModel):
@@ -164,3 +167,18 @@ def search_retrieval(request: RetrievalRequest) -> RetrievalResponse:
 @router.get("/health")
 def retrieval_health() -> dict[str, str]:
     return {"status": "ok", "service": "retrieval"}
+
+
+@router.get("/retrieval/regions")
+def region_geometry() -> dict[str, Any]:
+    """Expose the generated Phase 9 geometry without creating a second data source."""
+    if not REGION_GEOJSON_PATH.exists():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Phase 9 region GeoJSON is not available")
+    try:
+        with REGION_GEOJSON_PATH.open("r", encoding="utf-8") as handle:
+            payload = json.load(handle)
+    except (OSError, json.JSONDecodeError) as exc:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Phase 9 region GeoJSON could not be read") from exc
+    if payload.get("type") != "FeatureCollection" or not isinstance(payload.get("features"), list):
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail="Phase 9 region GeoJSON is invalid")
+    return payload

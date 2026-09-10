@@ -112,6 +112,8 @@ def _write_geojson(path: Path, regions: list[dict[str, object]], *, crs: str = "
     features = []
     for region in regions:
         min_col, min_row, max_col, max_row = region["bbox"]
+        max_col += 1
+        max_row += 1
         geom = {
             "type": "Polygon",
             "coordinates": [[
